@@ -3,6 +3,7 @@ module.exports = {
 		headless: false,
 		slowMo: 100,
 		product: 'chrome',
+		defaultViewport: null,
 	},
 	browserContext: 'default',
 }

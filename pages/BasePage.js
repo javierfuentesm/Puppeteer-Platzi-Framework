@@ -4,7 +4,7 @@ export default class BasePage {
 	}
 
 	async getUrl() {
-		return await page.url()
+		return page.url()
 	}
 
 	async getText(selector) {
@@ -38,7 +38,12 @@ export default class BasePage {
 			await page.waitForSelector(selector)
 			await page.click(selector, opts)
 		} catch (e) {
-			throw new Error(`Error al dar click en el selector ${selector}`)
+			try {
+				const element = await page.waitForXPath(selector)
+				await element.click(selector)
+			} catch (e) {
+				throw new Error(`Error al dar click en el selector ${selector}`)
+			}
 		}
 	}
 
