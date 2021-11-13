@@ -36,7 +36,7 @@ export default class BasePage {
 	async click(selector) {
 		try {
 			await page.waitForSelector(selector)
-			await page.click(selector, opts)
+			await page.click(selector)
 		} catch (e) {
 			try {
 				const element = await page.waitForXPath(selector)
