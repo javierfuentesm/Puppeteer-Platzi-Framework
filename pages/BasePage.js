@@ -36,7 +36,7 @@ export default class BasePage {
 	async click(selector) {
 		try {
 			await page.waitForSelector(selector)
-			await page.click(selector, opts)
+			await page.click(selector)
 		} catch (e) {
 			throw new Error(`Error al dar click en el selector ${selector}`)
 		}
