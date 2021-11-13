@@ -30,6 +30,5 @@ describe('Iniciar sesion en el pagina y llenar los datos de vuelo e indicar la b
 	test('Validar que estemos en vuelos y seleccionar el vuelo', async () => {
 		await flightsPage.validatePage()
 		await flightsPage.selectFlight('Mexico', 'Paris', '20-11-2022', 5)
-		await flightsPage.wait(5000)
 	}, 30000)
 })
