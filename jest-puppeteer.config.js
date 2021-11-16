@@ -5,5 +5,5 @@ module.exports = {
 		product: 'chrome',
 		defaultViewport: null,
 	},
-	browserContext: 'default',
+	browserContext: 'incognito',
 }
