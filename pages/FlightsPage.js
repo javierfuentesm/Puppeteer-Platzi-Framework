@@ -15,30 +15,30 @@ export default class FlightsPage extends BasePage {
 		}
 	}
 
-	validatePage() {
-		page.waitForNavigation({ waitUntil: 'networkidle0' })
-		page.waitForSelector(this.mainDiv)
-		page.waitForSelector(this.inputs.from)
-		page.waitForSelector(this.inputs.to)
-		page.waitForSelector(this.inputs.date)
-		page.waitForSelector(this.inputs.passengers)
-		page.waitForSelector(this.inputs.search)
+	async validatePage() {
+		await page.waitForNavigation({ waitUntil: 'networkidle0' })
+		await page.waitForSelector(this.mainDiv)
+		await page.waitForSelector(this.inputs.from)
+		await page.waitForSelector(this.inputs.to)
+		await page.waitForSelector(this.inputs.date)
+		await page.waitForSelector(this.inputs.passengers)
+		await page.waitForSelector(this.inputs.search)
 	}
 
 	//Create a function to select a flight a destination a departure date and a number of passengers
 	async selectFlight(from, to, date, passengers) {
-		//LLenamos el campo de origen
+		//Llenamos el campo de origen
 		await this.type(this.inputs.from, from)
 		await this.click(this.inputs.firstOption)
 
-		//Lenamos el campo de destino
+		//Llenamos el campo de destino
 		await this.type(this.inputs.to, to)
 		await this.click(this.inputs.firstOption)
 
-		//Lenamos el campo de fecha
+		//Llenamos el campo de fecha
 		await this.type(this.inputs.date, date)
 
-		//Lenamos el campo de pasajeros
+		//Llenamos el campo de pasajeros
 		if (passengers !== 1) {
 			await this.click(this.inputs.passengers)
 			//Iterar hasta que seleccionemos el numero de pasajeros

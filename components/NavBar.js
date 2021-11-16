@@ -11,14 +11,14 @@ export default class NavBar extends BasePage {
 		}
 	}
 
-	validateNavBarIsPresent() {
-		page.waitForSelector(this.navBar)
-		page.waitForXPath(this.menu.home)
-		page.waitForXPath(this.menu.hotels)
-		page.waitForXPath(this.menu.flights)
+	async validateNavBarIsPresent() {
+		await page.waitForSelector(this.navBar)
+		await page.waitForXPath(this.menu.home)
+		await page.waitForXPath(this.menu.hotels)
+		await page.waitForXPath(this.menu.flights)
 	}
 
-	selectMenuItem(menuItem) {
-		this.click(this.menu[menuItem])
+	async selectMenuItem(menuItem) {
+	await	this.click(this.menu[menuItem])
 	}
 }

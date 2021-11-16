@@ -15,7 +15,7 @@ describe('Iniciar sesion en el pagina y llenar los datos de vuelo e indicar la b
 
 	test('Debe iniciar  visitar la pagina de login e iniciar sesion', async () => {
 		await loginPage.visit()
-		await loginPage.login('user@phptravels.com', 'demouser')
+		await loginPage.login('agent@phptravels.com', 'demoagent')
 	}, 20000)
 
 	test('Que lleguemos al dashboard', async () => {

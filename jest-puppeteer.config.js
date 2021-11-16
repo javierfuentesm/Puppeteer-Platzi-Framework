@@ -1,7 +1,7 @@
 module.exports = {
 	launch: {
 		headless: false,
-		slowMo: 100,
+		slowMo: 30,
 		product: 'chrome',
 		defaultViewport: null,
 	},

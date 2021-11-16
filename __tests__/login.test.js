@@ -12,7 +12,7 @@ describe('Iniciar sesion en el pagina', () => {
 	})
 
 	it('llenar los campos', async () => {
-		await loginPage.login('user@phptravels.com', 'demouser')
+		await loginPage.login('agent@phptravels.com', 'demoagent')
 	}, 20000)
 
 	it('Validar que este en el dashboard', async () => {
